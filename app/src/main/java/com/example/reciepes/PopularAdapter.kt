@@ -1,6 +1,7 @@
 package com.example.reciepes
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -27,5 +28,9 @@ class PopularAdapter(var dataList:ArrayList<Recipe>,var context: Context):
         holder.binding.popularTxt.text = dataList.get(position).tittle
         var time=dataList.get(position).ing.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         holder.binding.popularTime.text = time.get(0)
+        holder.itemView.setOnClickListener{
+            var intent = Intent(context,RecipeActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 }

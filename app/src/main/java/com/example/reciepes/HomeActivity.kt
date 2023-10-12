@@ -23,6 +23,30 @@ class HomeActivity : AppCompatActivity() {
         binding.search.setOnClickListener{
             startActivity(Intent(this,SearchActivity::class.java))
         }
+        binding.salad.setOnClickListener{
+            var myIntent =Intent(this@HomeActivity,CategoryActivity::class.java)
+            myIntent.putExtra("TITLE","Salad")
+            myIntent.putExtra("CATEGORY","Salad")
+            startActivity(myIntent)
+        }
+        binding.main.setOnClickListener{
+            var myIntent =Intent(this@HomeActivity,CategoryActivity::class.java)
+            myIntent.putExtra("TITLE","Main Dish")
+            myIntent.putExtra("CATEGORY","Dish")
+            startActivity(myIntent)
+        }
+        binding.drink.setOnClickListener{
+            var myIntent =Intent(this@HomeActivity,CategoryActivity::class.java)
+            myIntent.putExtra("TITLE","Drinks")
+            myIntent.putExtra("CATEGORY","Drinks")
+            startActivity(myIntent)
+        }
+        binding.desserts.setOnClickListener{
+            var myIntent =Intent(this@HomeActivity,CategoryActivity::class.java)
+            myIntent.putExtra("TITLE","Desserts")
+            myIntent.putExtra("CATEGORY","Desserts")
+            startActivity(myIntent)
+        }
 
 
 

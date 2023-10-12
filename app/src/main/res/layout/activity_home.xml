@@ -147,7 +147,7 @@
 
                 />
             <ImageView
-                android:id="@+id/drinks"
+                android:id="@+id/main"
                 app:srcCompat="@drawable/drinks"
                 style="@style/my_st"
                 android:layout_toEndOf="@id/salad"
@@ -158,9 +158,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Main"
-                android:layout_below="@id/drinks"
-                android:layout_alignStart="@id/drinks"
-                android:layout_alignEnd="@id/drinks"
+                android:layout_below="@id/main"
+                android:layout_alignStart="@id/main"
+                android:layout_alignEnd="@id/main"
                 android:layout_marginStart="17dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="19dp"
@@ -175,7 +175,7 @@
                 android:id="@+id/drink"
                 app:srcCompat="@drawable/catergory_drinks"
                 style="@style/my_st"
-                android:layout_toEndOf="@id/drinks"
+                android:layout_toEndOf="@id/main"
                 android:layout_marginStart="17dp"/>
 
             <TextView
