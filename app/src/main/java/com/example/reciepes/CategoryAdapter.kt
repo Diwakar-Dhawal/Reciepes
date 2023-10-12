@@ -29,6 +29,11 @@ class CategoryAdapter(var dataList:ArrayList<Recipe>,var context: Context):
         holder.binding.time.text = temp[0]
         holder.binding.next.setOnClickListener{
             var intent = Intent(context,RecipeActivity::class.java)
+            intent.putExtra("img",dataList.get(position).img)
+            intent.putExtra("title",dataList.get(position).tittle)
+            intent.putExtra("des",dataList.get(position).des)
+            intent.putExtra("ing",dataList.get(position).ing)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(intent)
         }
     }

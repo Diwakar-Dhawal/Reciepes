@@ -1,10 +1,16 @@
 package com.example.reciepes
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.Gravity
+import android.view.ViewGroup
+import android.view.Window
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.example.reciepes.databinding.ActivityHomeBinding
@@ -47,7 +53,20 @@ class HomeActivity : AppCompatActivity() {
             myIntent.putExtra("CATEGORY","Desserts")
             startActivity(myIntent)
         }
+        binding.more.setOnClickListener {
+            var dialog = Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setContentView(R.layout.bottom_sheet)
 
+
+            dialog.show()
+            dialog.window!!.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.window!!.setGravity(Gravity.BOTTOM)
+        }
 
 
     }

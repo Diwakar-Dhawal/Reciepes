@@ -33,6 +33,11 @@ class SearchAdapter(var dataList: ArrayList<Recipe>,var context: Context): Recyc
         holder.binding.searchTitle.text = dataList.get(position).tittle
         holder.itemView.setOnClickListener{
             var intent = Intent(context,RecipeActivity::class.java)
+            intent.putExtra("img",dataList.get(position).img)
+            intent.putExtra("title",dataList.get(position).tittle)
+            intent.putExtra("des",dataList.get(position).des)
+            intent.putExtra("ing",dataList.get(position).ing)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(intent)
         }
     }
